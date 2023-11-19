@@ -4,9 +4,9 @@ import Link from "next/link";
 const AnimeList = ({ api }) => {
   return (
     <div className="grid sm:grid-cols-3 gap-4 md:grid-cols-4 grid-cols-2 px-4">
-      {api.data.map((anime) => {
+      {api.data?.map((anime, index) => {
         return (
-          <Link href={`/${anime.mal_id}`} className="cursor-pointer">
+          <Link href={`/${anime.mal_id}`} className="cursor-pointer" key={index}>
             <Image
               src={anime.images.webp.image_url}
               alt="..."
